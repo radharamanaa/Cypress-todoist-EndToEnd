@@ -8,29 +8,7 @@ context('Todoist testing', () => {
             'bearer': '5db33544a0b5c9ad53aa61d185670ed79ed24467'
         }
         let addedLabelId:Number;
-        function getRandomNumber(minimum:number = 1, maximum:number = 100):number {
-            if (minimum > maximum) {
-              console.log('Minimum cannot be more than maximum. Check your inputs');
-              return -1;
-            }
-            if (minimum === maximum) {
-              return minimum;
-            }
-            let temp = Math.random();
-            while (!(Math.floor(temp) > minimum && Math.floor(temp) < maximum)) {
-              temp = Math.floor(Math.random() * (maximum - 1));
-            }
-            return temp;
-          }
-        function getRandString():String {
-            const allChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefigklmnopqrstuvwxyz0123456789';
-            const len = 10;
-            let result = '';
-            for (let index = 0; index < len; index++) {
-                result += allChars.charAt(getRandomNumber(0, allChars.length - 1));
-            }
-            return result;
-        }
+        
         it('Get Users Projects',() => {
             cy.request({
                 log: true,
