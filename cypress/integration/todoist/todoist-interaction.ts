@@ -2,7 +2,7 @@
 
 context('Todoist testing', () => {
     describe('Todoist Basic Interactions', () => {
-        let projectId:number = 65651217861;
+        let projectId:number;
         let taskAddedId:Number;
         let auth = {
             'bearer': '5db33544a0b5c9ad53aa61d185670ed79ed24467'
@@ -31,7 +31,6 @@ context('Todoist testing', () => {
                     'Content-Type': 'application/json',
                 },
                 body:{
-                    id: projectId,
                     name:'Shopping List',
                     'comment_count': 0,
                     'color': 47,
@@ -43,6 +42,8 @@ context('Todoist testing', () => {
                 }
             }).then((response) => {
                 expect(response.status).to.eq(200);
+                projectId = response.body.id;
+                console.log(response.body.id);
             })
         })
 
@@ -63,6 +64,7 @@ context('Todoist testing', () => {
                 expect(response.status).to.eq(200);
                 expect(response.body).to.have.property('id');
                 taskAddedId = response.body.id;
+                console.log(`Task id added is ${taskAddedId}`)
             })
         })
         it('Edit task - Add new Desc',() => {
@@ -124,6 +126,7 @@ context('Todoist testing', () => {
                 auth:auth,
                 method: 'DELETE',
             }).then((response) => {
+                console.log(`Task id deleted is ${taskAddedId}`)
                 expect(response.status).to.eq(204);
             })
 
