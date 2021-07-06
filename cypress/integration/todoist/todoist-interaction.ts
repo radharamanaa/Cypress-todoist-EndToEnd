@@ -7,7 +7,6 @@ context('Todoist testing', () => {
         let auth = {
             'bearer': '5db33544a0b5c9ad53aa61d185670ed79ed24467'
         }
-        let addedLabelId:Number;
         
         it('Get Users Projects',() => {
             cy.request({
@@ -33,12 +32,6 @@ context('Todoist testing', () => {
                 body:{
                     name:'Shopping List',
                     'comment_count': 0,
-                    'color': 47,
-                    'shared': false,
-                    'sync_id': 0,
-                    'order': 1,
-                    'favorite': false,
-                    'url': `https://todoist.com/showProject?id=${projectId}`
                 }
             }).then((response) => {
                 expect(response.status).to.eq(200);

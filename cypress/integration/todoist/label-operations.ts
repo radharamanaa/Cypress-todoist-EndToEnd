@@ -9,7 +9,7 @@ context('Label Operations', () => {
             'Content-Type': 'application/json',
         }
         let addedLabelId:Number;
-        it('Create label',() => {
+        it.only('Create label',() => {
             cy.request({
                 url: `https://api.todoist.com/rest/v1/labels`,
                 auth:auth,
