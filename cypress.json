@@ -7,8 +7,8 @@
       "projectId": 1,
       "suiteId": 1,
       "createTestRun": false,
-      "runId": 1,
-      "runName": "All Cases"
+      "runId": 2,
+      "runName": "Aug 3 Cypress End to end"
     }
   }
   

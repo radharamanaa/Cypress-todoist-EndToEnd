@@ -4,9 +4,10 @@ stages {
 	stage('build')
 		{
 			steps	{
-					bat 'npm install typescript'
-					bat 'npm install cypress --save-dev'              
-					bat 'npm run cypress:run'
+					sh 'npm install typescript'
+					sh 'npm install cypress --save-dev'  
+					sh 'npm install salty-cypress-testrail-reporter --save-dev'           
+					sh 'npx cypress run . --reporter salty-cypress-testrail-reporter'
 				}
        	}
 	}	
