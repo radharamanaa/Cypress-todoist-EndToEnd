@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open --config-file configs/cypress.json",
+    "cypress:run": "cypress run .\\cypress\\integration\\UITests.feature --reporter salty-cypress-testrail-reporter"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^7.6.0",
+    "salty-cypress-testrail-reporter": "^1.4.0",
     "typescript": "^4.3.5"
   }
 }
