@@ -19,6 +19,9 @@ describe('Label Operations', () => {
                 name: "Regular",
             }
 
+
+            
+
         }).then((response) => {
             expect(response.status).to.eq(200);
             expect(response.body).to.have.property('id');
