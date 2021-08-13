@@ -20,5 +20,6 @@ steps:
     npm run build
     npm install typescript
     npm install cypress --save-dev
+    npm install salty-cypress-testrail-reporter --save-dev
     npm run cypress:run
   displayName: 'npm install and build'
